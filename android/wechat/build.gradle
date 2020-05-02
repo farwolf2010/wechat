@@ -23,7 +23,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':farwolf.weex')
+    api 'com.farwolf.weexplus:farwolf.weex:latest.integration'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 
 }

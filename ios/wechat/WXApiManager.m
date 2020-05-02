@@ -36,6 +36,7 @@ WX_PLUGIN_Entry(WXApiManager)
 {
     NSDictionary *d= notify.userInfo;
     NSURL *url=d[@"url"];
+
     [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
 }
 
