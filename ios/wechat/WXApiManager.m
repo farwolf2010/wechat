@@ -8,7 +8,6 @@
 
 #import "WXApiManager.h"
 #import "farwolf.h"
-#import "farwolf_weex.h"
 WX_PLUGIN_Entry(WXApiManager)
 
 @implementation WXApiManager

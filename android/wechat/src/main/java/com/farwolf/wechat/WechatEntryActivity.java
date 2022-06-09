@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.farwolf.view.imgae.crop.Log;
-import com.farwolf.weex.core.WeexFactory;
-import com.farwolf.weex.core.WeexFactory_;
+
 import com.taobao.weex.bridge.JSCallback;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
@@ -46,8 +44,7 @@ public abstract class WechatEntryActivity extends Activity implements IWXAPIEven
 
     public void onResp(BaseResp resp){
 
-        Log.e("接受到微信返回:"+resp.errCode);
-        WeexFactory factory= WeexFactory_.getInstance_(this);
+
         final HashMap m=new HashMap();
         m.put("type",getType(resp.getType()));
         m.put("errCode",resp.errCode);

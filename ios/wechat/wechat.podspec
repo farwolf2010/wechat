@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "Source/Exclude"
   #s.dependency 'farwolf'
   #s.dependency 'farwolf.business'
-  s.dependency 'farwolf.weex'  
+  s.dependency 'weexplus'  
   s.platform  = :ios, "8.0"
   
   s.frameworks = 'SystemConfiguration', 'CoreTelephony', 'UIKit', 'Foundation', 'CFNetwork','Security'

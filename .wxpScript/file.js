@@ -97,23 +97,18 @@ const del = (path) => {
 
 
 
-const mkdir = (dirname) => {
-  return new Promise((resolve, reject) => {
-     
-       if (fs.existsSync(dirname)) {  
-            return true;  
-        } else {  
-            if (mkdir(path.dirname(dirname))) {  
-                fs.mkdirSync(dirname);  
-                return true;  
-            }  
-        }  
 
-
-    });  
-             
-
-};
+function mkdir(dirname)  {
+    if (fs.existsSync(dirname)) {
+        return true;
+    } else {
+        if (mkdir(path.dirname(dirname))) {
+            if(dirname.indexOf('.')==-1)
+                fs.mkdirSync(dirname);
+            return true;
+        }
+    }
+}
 
 
 

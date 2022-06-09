@@ -43,8 +43,10 @@ replaceAll()
   }
   else{
     console.log('不存在，直接复制')
-    process.chdir(android_path+'/app/src/main/java/'+packagename.replace(/\./g,'/')+'/')
-    fs.mkdirSync('wxapi');  
+    let oppath=android_path+'/app/src/main/java/'+packagename.replace(/\./g,'/')+'/wxapi'
+    file.mkdir(oppath)
+    process.chdir(oppath)
+    
      file.copy(from,to).then(()=>{
       console.log('配置完成，enjoy!')
      })

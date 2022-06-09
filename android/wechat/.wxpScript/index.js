@@ -29,7 +29,7 @@ replaceAll()
  // console.log('sss='+to)
   if(fs.existsSync(to)) {
       console.log('已存在，开始删除')
-      file.del(to).then(()=>{
+      
          process.chdir(android_path+'/app/src/main/java/'+packagename.replace(/\./g,'/')+'/')
         fs.mkdirSync('wxapi'); 
         file.copy(from,to).then(()=>{
@@ -43,7 +43,15 @@ replaceAll()
   }
   else{
     console.log('不存在，直接复制')
-    process.chdir(android_path+'/app/src/main/java/'+packagename.replace(/\./g,'/')+'/')
+
+    let pkgpath=android_path+'/app/src/main/java/'+packagename.replace(/\./g,'/')+'/'
+      console.log(pkgpath)
+        file.mkdir(pkgpath)
+    if(!fs.existsSync(pkgpath)){
+       console.log('不存在，直接复制1')
+        file.mkdir(pkgpath)
+    }
+    process.chdir(pkgpath)
     fs.mkdirSync('wxapi');  
      file.copy(from,to).then(()=>{
       console.log('配置完成，enjoy!')

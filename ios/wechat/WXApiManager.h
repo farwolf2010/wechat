@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WXApi.h"
-#import <WeexSDK/WXEventModuleProtocol.h>
-#import <WeexSDK/WXModuleProtocol.h>
+#import "weexplus.h"
 
 @protocol WXApiManagerDelegate <NSObject>
 

@@ -2,16 +2,18 @@ package com.farwolf.wechat.module;
 
 import android.widget.Toast;
 
-import com.farwolf.json.JsonTool;
+
 import com.farwolf.wechat.WechatEntryActivity;
-import com.farwolf.weex.annotation.WeexModule;
-import com.farwolf.weex.app.WeexApplication;
-import com.farwolf.weex.base.WXModuleBase;
+
 import com.taobao.weex.annotation.JSMethod;
 import com.taobao.weex.bridge.JSCallback;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.weexplus.app.WxpApplication;
+import com.weexplus.core.plugin.WeexModule;
+import com.weexplus.util.JsonTool;
+import com.weexplus.util.WXModuleBase;
 
 import org.json.JSONObject;
 
@@ -30,7 +32,7 @@ public class WechatModule extends WXModuleBase {
     public void regist(String appId)
     {
 
-        wxApi = WXAPIFactory.createWXAPI(WeexApplication.getInstance(), appId, true);
+        wxApi = WXAPIFactory.createWXAPI(mWXSDKInstance.getContext().getApplicationContext(), appId, true);
         wxApi.registerApp(appId);
     }
 
